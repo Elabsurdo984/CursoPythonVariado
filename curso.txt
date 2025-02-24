@@ -1,0 +1,716 @@
+Día 0: Preparación del Entorno
+    - Instalación y Configuración
+        - Instalación de Python
+        - Instalación de IDE (VS Code, PyCharm)
+        - Configuración del entorno de desarrollo
+        - Instalación de pip y virtualenv
+    - Control de Versiones
+        - Instalación de Git
+        - Comandos básicos (init, add, commit, push, pull)
+        - Creación de repositorios
+        - .gitignore y buenas prácticas
+
+Día 1: Introducción a Python:
+    - Conceptos Básicos:
+        - Instalación de Python y herramientas para el curso
+        - Módulos y su funcionamiento
+        - Librerías y su uso
+        - Frameworks y su propósito
+    - Python Básico:
+        - Imprimir en pantalla (print)
+        - Variables y tipos de datos
+        - Condicionales (if, elif, else)
+        - Bucles (for, while)
+        - Funciones y parámetros
+        - Manejo de errores (try/except)
+
+Dia 2: Aprende math
+    - Math:
+        - Operaciones matematicas basicas (suma, resta, multiplicacion, division)
+        - Constantes matematicas:
+            - math.pi: El valor de π (Pi), que es útil en cálculos geométricos, trigonometría, etc.
+            - math.e: El valor de la constante de Euler, importante en cálculos logarítmicos y exponenciales.
+        - Funciones trigonometricas:
+            math.sin(x), math.cos(x), math.tan(x): Funciones trigonométricas que devuelven el seno, 
+            coseno y tangente de un ángulo dado (en radianes).
+            math.asin(x), math.acos(x), math.atan(x): Funciones inversas (arco) para obtener el 
+            ángulo correspondiente a un valor de seno, coseno o tangente.
+            math.radians(x): Convierte un ángulo en grados a radianes.
+            math.degrees(x): Convierte un ángulo en radianes a grados.
+        - Funciones exponenciales y logarítmos:
+            math.exp(x): Calcula e elevado a la potencia de x, es decir, exex.
+            math.log(x, base): Calcula el logaritmo de x con una base dada (por defecto, base e para logaritmo natural).
+            math.log10(x): Calcula el logaritmo en base 10 de x.
+            math.sqrt(x): Devuelve la raíz cuadrada de x.
+            math.pow(x, y): Eleva x a la potencia de y.
+
+Dia 3: Aprende Random
+    - Random:
+        - Generación de números aleatorios básicos:
+            - random.random(): Devuelve un número decimal aleatorio entre 0 y 1 (es decir, en el rango [0.0, 1.0]).
+            - random.randint(a, b): Devuelve un número entero aleatorio en el rango [a, b], ambos inclusive.
+            - random.uniform(a, b): Devuelve un número decimal aleatorio entre los valores a y b, donde a es menor que b.
+        - Generacion de secuencias aleatorias
+            - random.choice(sequence): Elige un elemento aleatorio de una secuencia (como una lista o una cadena de texto).
+            - random.choices(sequence, k=n): Elige una lista de elementos aleatorios (con reemplazo) de una secuencia, con n elementos seleccionados.
+            - random.sample(sequence, k=n): Elige una muestra de elementos aleatorios (sin reemplazo) de una secuencia, con n elementos seleccionados.
+        - Mezcla aleatoria de secuencias:
+            - random.shuffle(sequence): Mezcla aleatoriamente los elementos de una secuencia (modifica la secuencia en el lugar).
+
+- Dia 4: Aprende DateTime
+    - DateTime (Trabajar con fechas y horas combinadas):
+            - datetime.now(): Devuelve la fecha y hora actual del sistema.
+            - datetime.today(): Devuelve la fecha y hora actual del sistema (similar a now()).
+            - datetime.fromtimestamp(timestamp): Convierte un valor de timestamp (segundos desde la época Unix) a un objeto datetime en la hora local.
+            - datetime.utcfromtimestamp(timestamp): Similar a fromtimestamp(), pero devuelve la fecha y hora en formato UTC.
+            - datetime.strptime(date_string, format): Convierte una cadena de texto (fecha) en un objeto datetime según el formato especificado.
+            - datetime.strftime(format): Convierte un objeto datetime a una cadena de texto con el formato especificado.
+            - datetime.replace(year, month, day, hour, minute, second, microsecond): Devuelve una nueva instancia de datetime con algunos de sus componentes modificados.
+            - datetime.weekday(): Devuelve el día de la semana como un entero (lunes=0, domingo=6).
+            - datetime.isoweekday(): Devuelve el día de la semana como un entero (lunes=1, domingo=7).
+        - Clase Date (Trabajar solo con fechas):
+            - date.toordinal(): Devuelve el número de días desde el 1 de enero del año 1 (un valor entero).
+        - Clase TimeDelta (para trabajar con intervalos de tiempo):
+            - timedelta(days, seconds, microseconds, milliseconds, minutes, hours, weeks): Crea un objeto timedelta que representa la diferencia entre dos fechas o tiempos.
+            - timedelta.total_seconds(): Devuelve la duración de un timedelta en segundos.
+
+Dia 5: Aprende Time:
+    - Time:
+            - time.time():
+                - Devuelve el tiempo en segundos desde la "época", que es el 1 de enero de 1970 (conocido como "Unix timestamp").
+                - Este valor es un número de punto flotante que representa el tiempo transcurrido desde esa fecha en segundos.
+            - time.sleep(secs):
+                - Pausa la ejecución del programa durante el número de segundos especificado.
+                - Es útil para esperar en intervalos, por ejemplo, en simulaciones o en tiempos de espera entre tareas.
+            - time.localtime([secs]):
+                - Convierte un valor de tiempo en segundos desde la época Unix (timestamp) en una estructura struct_time que representa el tiempo local.
+                - Si no se proporciona el argumento secs, devuelve la hora local actual.
+            - time.gmtime([secs]):
+                - Similar a localtime(), pero convierte el tiempo en segundos a una hora UTC (Tiempo Universal Coordinado), también en formato struct_time.
+            - time.mktime(t):
+                - Convierte una estructura struct_time (como la que devuelve localtime() o gmtime()) en un timestamp, es decir, el número de segundos desde la época.
+            - time.strftime(format, t):
+                - Devuelve una cadena de texto que representa la hora según el formato especificado. El argumento t es una estructura struct_time, como la que devuelve localtime() o gmtime(). Si t no se proporciona, usa el tiempo actual.
+            - time.strptime(string, format):
+                - Convierte una cadena de texto que representa una fecha/hora en un objeto struct_time, según el formato proporcionado.
+            - time.perf_counter():
+                - Devuelve el valor del contador de alta resolución para medir el tiempo transcurrido en intervalos pequeños. Es más preciso que time.time() y se usa principalmente para medir el rendimiento de un bloque de código.
+            - time.process_time():
+                - Devuelve el tiempo de CPU utilizado por el proceso actual, excluyendo el tiempo de espera del sistema operativo.
+                - Es útil para medir el tiempo de ejecución de un programa o de partes específicas del código.
+            - time.monotonic():
+                - Devuelve el valor de un contador monotónico (que nunca retrocede) que es útil para medir el tiempo transcurrido de manera confiable, incluso después de pausas del sistema.
+                - No es afectado por ajustes en el reloj del sistema.
+            - time.thread_time():
+                - Devuelve el tiempo del procesador en segundos utilizado por el hilo actual.
+                - Es útil para medir el rendimiento en aplicaciones multihilo.
+            - time.altzone:
+                - Devuelve la diferencia en segundos entre UTC y la zona horaria local en horario de verano (si está en vigor).
+
+Dia 6: Aprende La libreria del sistema operativo (os):
+    - Sistema de archivos:
+        - os.getcwd(): Devuelve el directorio de trabajo actual (current working directory).
+        - os.chdir(path): Cambia el directorio de trabajo actual a la ruta especificada (path).
+        - os.listdir(path): Devuelve una lista de los nombres de los archivos y directorios en el directorio especificado (path).
+        - os.mkdir(path, mode=0o777): Crea un directorio con la ruta especificada. El parámetro mode define los permisos (opcional).
+        - os.makedirs(path, mode=0o777, exist_ok=False): Crea directorios de manera recursiva. Si exist_ok=True, no lanza una excepción si el directorio ya existe.
+        - os.remove(path): Elimina un archivo especificado en path.
+        - os.rmdir(path): Elimina un directorio vacío especificado en path.
+        - os.removedirs(path): Elimina directorios de manera recursiva, pero solo si están vacíos.
+        - os.rename(src, dst): Renombra un archivo o directorio desde src a dst.
+        - os.rename(src, dst): Renombra o mueve un archivo o directorio.
+        - os.remove(path): Elimina el archivo especificado por la ruta path.
+        - os.path.exists(path): Retorna True si la ruta especificada path existe, de lo contrario, False.
+        - os.path.isfile(path): Retorna True si la ruta especificada es un archivo regular.
+        - os.path.isdir(path): Retorna True si la ruta especificada es un directorio.
+        - os.path.join(path, *paths): Combina múltiples componentes de rutas de manera correcta según el sistema operativo.
+        - os.path.abspath(path): Devuelve la ruta absoluta de la ruta especificada.
+        - os.path.basename(path): Retorna el nombre del archivo o directorio de la ruta path.
+        - os.path.dirname(path): Retorna la ruta del directorio de la ruta especificada.
+        - os.path.getsize(path): Retorna el tamaño del archivo en bytes de la ruta especificada.
+
+Dia 7: Aprende requests (Peticiones HTTP):
+    - Que son los servidores HTTP
+    - Que es una API
+    - Metodos basicos requests:
+        - requests.get(url, params=None, **kwargs): Realiza una petición HTTP GET a la URL especificada. Es el método más común para obtener datos de una API o página web.
+        - requests.post(url, data=None, json=None, **kwargs): Realiza una petición HTTP POST a la URL especificada. Se usa para enviar datos al servidor.
+        - requests.put(url, data=None, **kwargs): Realiza una petición HTTP PUT, que se usa para actualizar recursos en el servidor.
+        - requests.delete(url, **kwargs): Realiza una petición HTTP DELETE para eliminar un recurso en el servidor.
+        - requests.head(url, **kwargs): Realiza una solicitud HTTP HEAD, que obtiene solo los encabezados de la respuesta (sin el cuerpo).
+        - requests.options(url, **kwargs): Realiza una solicitud HTTP OPTIONS, que solicita los métodos disponibles para un recurso determinado en el servidor.
+    - Parametros y datos de solicitudes:
+        - Parámetros de URL (query parameters): Se agregan a la URL mediante el parámetro params.
+        - Envío de datos con POST (form-data o JSON): En el método post(), puedes enviar datos como formulario (data) o como JSON (json).
+    - Respuesta y manejo de errores:
+        - response.text: El contenido de la respuesta como texto (decodificado).
+        - response.content: El contenido de la respuesta como bytes (útil para archivos binarios).
+        - response.json(): Convierte la respuesta en formato JSON (si el contenido lo permite).
+        - response.status_code: El código de estado HTTP de la respuesta (por ejemplo, 200 para éxito).
+        - response.headers: Los encabezados de la respuesta.
+    - Autenticacion y cabeceras personalizadas:
+        - Autenticación básica: Puedes pasar un par de usuario/contraseña en una solicitud HTTP usando auth.
+        - Cabeceras personalizadas: Puedes agregar cabeceras personalizadas a la solicitud con el parámetro headers.
+        - Autenticación con tokens (por ejemplo, Bearer token)
+    - Manejo de tiempo de espera y reintentos:
+        - Tiempo de espera (timeout): Puedes especificar un tiempo de espera para que la solicitud no se quede indefinidamente bloqueada.
+        - Reintentos automáticos con requests.adapters: Puedes usar un adaptador de reintentos para manejar fallos transitorios.
+    - Redirecciones y manejo de cookies:
+        - Que son las cookies
+        - Redirecciones: requests sigue automáticamente las redirecciones HTTP (códigos 3xx). Si necesitas deshabilitar este comportamiento, puedes hacerlo con allow_redirects=False.
+        - Cookies: Puedes acceder y manejar las cookies utilizando response.cookies.
+    - Archivos y subidas de archivos:
+        - Subida de archivos con POST: Puedes subir archivos utilizando el parámetro files.
+
+Dia 8: Libreria pandas para analisis de datos:
+    - Que es pandas
+    - Estructuras de datos en pandas:
+        - Series: Estructura unidimensional (similar a un array o lista).
+        - DataFrame: Estructura bidimensional (similar a una tabla o base de datos).
+    - Creación y manejo de datos con DataFrame y Series:
+        - Creación de un DataFrame desde distintos formatos:
+            - Desde un diccionario
+            - Desde una lista de listas o diccionario de listas
+            - Desde un archivo CSV o Excel
+        - Acceso y manipulación de datos:
+            - Acceso a una columna (como Series): df['col1']
+            - Acceso a una fila por índice: df.iloc[0]
+            - Acceso a una fila por nombre: df.loc['row_name']
+            - Selección de varias columnas: df[['col1', 'col2']]
+    - Limpieza y manipulación de datos:
+        - Renombrar columnas
+        - Eliminar columnas o filas
+        - Manejo de valores nulos:
+            - Detectar valores nulos: df.isnull()
+            - Eliminar filas con valores nulos: df.dropna()
+            - Rellenar valores nulos: df.fillna(valor)
+        - Filtrar datos con condiciones
+    - Operaciones y transformaciones en DataFrame:
+        - Aplicar funciones a columnas:
+            - Usar apply() para aplicar funciones personalizadas a las columnas:
+        - Operaciones aritméticas
+        - Transformaciones y agregaciones:
+            - groupby(): Agrupar datos por una o más columnas y aplicar funciones agregadas:
+    - Importar y exportar formatos:
+        - Importar desde diferentes formatos
+            - CSV
+            - Excel
+        - Exportar datos a diferentes formatos:
+            - CSV
+            - Excel
+
+Dia 9: Libreria NumPy para computacion numerica:
+    - Que es la computacion numerica
+    - Concepto básico: NumPy proporciona el objeto principal ndarray (array multidimensional), que es mucho más eficiente que las listas de Python para realizar operaciones numéricas.
+    - Creacion de arreglos (Arrays):
+        - Creación de un array a partir de una lista
+        - Crear un array de ceros:
+            - Crea un array lleno de ceros de la forma especificada.
+        - Crear un array de unos
+        - Crear un array con valores aleatorios:
+            - Aleatorios entre 0 y 1
+            - Aleatorios enteros
+        - Crear un array de números igualmente espaciados:
+            - np.linspace(start, stop, num_elements) crea un array de números igualmente espaciados entre start y stop.
+    - Indexación y selección de elementos:
+        - Acceso a un solo elemento
+            - Similar a las listas de Python, puedes acceder a los elementos mediante índices.
+        - Slicing (subarrays)
+            - Extraer subarrays de un array, utilizando la notación de slicing.
+        - Indexación booleana
+            - Filtrar elementos de un array basándote en una condición.
+        - Indexación avanzada con np.ix_()
+            - Permite seleccionar subconjuntos más complejos de elementos.
+    - Operaciones con arrays:
+        - Operaciones aritméticas básicas:
+            - NumPy permite realizar operaciones element-wise (elemento por elemento) entre arrays.
+        - Operaciones universales (ufuncs):
+            - Funciones matemáticas que se aplican elemento por elemento de un array.
+        - Operaciones de álgebra lineal:
+            - Producto punto (dot product)
+            - Producto matricial
+    - Redimensionamiento y manipulación de arrays:
+        - Cambiar la forma de un array (reshape)
+            - Cambiar la forma de un array sin modificar los datos.
+        - Aplanar un array:
+            - Convierte un array multidimensional a un array unidimensional.
+        - Concatenar y dividir arrays
+    - Funciones estadísticas y agregación:
+        - Promedio, mediana y desviación estándar:
+        - Suma, producto y otros agregados
+        - Mínimo, máximo y índice
+    - Broadcasting y operaciones entre arrays de diferentes dimensiones
+        - Broadcasting: Permite realizar operaciones entre arrays de diferentes dimensiones, "ajustando" las formas de los arrays automáticamente.
+    - Generacion de numeros aleatorios:
+        - Números aleatorios de distribución uniforme
+        - Generación de números enteros Aleatorios
+
+Dia 10: Libreria matplotlib para visualizacion de datos:
+    - Introduccion a MatPlotLib:
+        - Importacion
+        - Concepto básico: 
+            - Matplotlib es una librería para crear gráficos en Python, especialmente útil para la visualización de datos numéricos. Utiliza la interfaz de pyplot, que es sencilla de usar y permite crear gráficos rápidamente.
+    - Creacion de graficos basicos:
+        - Gráfico de líneas:
+            - El tipo más básico de gráfico. Ideal para visualizar series temporales o tendencias.
+        - Gráfico de dispersión (scatter plot):
+            - Útil para mostrar la relación entre dos variables.
+        - Gráfico de barras (bar plot):
+            - Ideal para comparar cantidades entre diferentes categorías.
+        - Histograma:
+            - Utilizado para mostrar la distribución de un conjunto de datos.
+    - Personalizacion de graficos:
+        - Título y etiquetas:
+            - Es importante añadir un título y etiquetas a los ejes para mejorar la comprensión del gráfico.
+        - Colores y estilos de líneas:
+            - Se puede personalizar el color y estilo de las líneas y los puntos.
+        - Leyenda:
+            - Añadir una leyenda para identificar los elementos del gráfico.
+        - Limitar los ejes:
+            - Establecer límites en los ejes para enfocar el gráfico en un rango específico de datos.
+    - SubGraficos (SubPlots):
+        - Crear múltiples gráficos en una misma figura:
+            - Es útil para comparar diferentes visualizaciones de datos en una sola imagen.
+        - Configurar el tamaño de la figura: Se puede cambiar el tamaño de la figura antes de mostrarla.
+    - Graficos avanzados
+        - Gráfico de área:
+            - Similar a un gráfico de líneas, pero con el área bajo la curva sombreada.
+        - Gráfico de caja (boxplot):
+            - Utilizado para mostrar la distribución y detectar valores atípicos (outliers).
+        - Gráfico de barras apiladas:
+            - Muestra la contribución de cada categoría a un total en una serie temporal o un conjunto de datos.
+    - Guardar graficos:
+        - Guardar el gráfico como imagen:
+            - Para guardar los gráficos en archivos como PNG, JPEG, PDF, etc.
+    - Animacion:
+        - Animaciones simples con FuncAnimation:
+            - Se puede crear animaciones para representar cómo cambian los datos con el tiempo.
+
+Dia 11: Libreria sqlite3 para manejar base de datos con SQL
+    - Introduccion a sqlite3
+        - Que es SQLite
+            - SQLite es una base de datos ligera, que se almacena en un solo archivo, lo que hace que sea fácil de usar y distribuir. Es útil para aplicaciones que no requieren una base de datos en red o servidores externos.
+    - Conexion a una base de datos
+        - Conectar a una base de datos SQLite:
+            - Si la base de datos no existe SQLite la crea automáticamente
+        - Cerrar la conexion
+            - Una vez que ya no necesitas interactuar con la base de datos, debes cerrarla.
+        - Crear un cursor para ejecutar consultas
+            - Crear un cursor
+                - El cursor de utiliza para interactuar con la base de datos, ejecutar sentencias SQL y recuperar resultados.
+        - Crear una tabla
+            - Sintaxis basica para crear una tabla
+                - Definir la estructura de la tabla especificando sus columnas y tipos de datos
+            - Confirmar cambios
+                - Despues de ejecutar una consulta, debes guardar los cambios con commit()
+        - Insertar datos en una tabla
+            - Insertar una fila
+                - Inserta datos especificos en una tabla utilizando la sentencia INSERT INTO
+            - Insertar multiples filas
+                - Insertar varias filas en una sola operacion utilizando executemany()
+        - Consultar datos de una tabla
+            - Consultar todos los registros de una tabla
+                - Utilizar SELECT para obtener todos los registros
+            - Consultar con condiciones
+                - Filtrar los resultados con condiciones en la clausula WHERE
+            - Consultas con Parametros
+                - Usar parametros para evitar inyecciones SQL y hacer las consultas mas dinamicas
+        - Actualizar registros
+            - Actualizar registros en una tabla
+                - Modificar los datos existentes usando la sentencia UPDATE
+        - Eliminar registros
+            - Eliminar registros con DELETE
+                - Eliminar filas de la tabla segun una condicion especifica
+        - Manejo de transacciones
+            - Confirmacion de transacciones
+                - El uso de commit() guarda los cambios realizados en la base de datos
+            - Deshacer cambios
+                - Si necesitas deshacer una transaccion, puedes usar rollback()
+        - Consultas avanzadas
+            - Joins
+                - Si tienes varias tablas, puedes combinar datos utilizando JOIN 
+            - Funciones agregadas
+                - Realizar operaciones agregadas como COUNT, SUM, AVG, etc
+        - Indices
+            - Crear un indice para mejorar el rendimiento de las consultas
+                - Los indices aceleran las consultas en columnas especificas
+        - Gestion de errores y excepciones
+            - Manejo de excepciones
+                - Capturar y manejar errores con try-except
+        - Cerrar el cursor y la conexion
+            - Cerrar el cursor
+                - Una vez que hayas terminado de ejecutar consultas, cierra el cursor
+            - Cerrar la conexion
+                - No olvides cerrar la conexion despues de finalizar el trabajo con la base de datos
+        - Exportar datos a otros formatos
+            - Exportar a CSV
+                - Si necesitas exportar los resultados de una consulta a un archivo CSV.
+        - Operaciones de optimizacion
+            - Vaciar la base de datos 
+                - Elimina todas las tablas de la base de datos
+
+Dia 12: Libreria json:
+    - ¿Que es JSON?
+        - JSON es un formato de texto ligero y fácil de leer/escribir, ampliamente utilizado para el intercambio de datos. Los datos en JSON se representan como pares clave-valor (como un diccionario en Python).
+    - Convertir datos Python a JSON (Serializacion)
+        - json.dumps()
+            - La funcion dumps() convierte un objeto python en una cadena JSON
+        - Opciones de dumps():
+            - Puedes usar varios parámetros para mejorar la legibilidad del JSON (como el parámetro indent para agregar indentación).
+        - ensure_ascii=False:
+            - Si el objeto Python contiene caracteres no ASCII (como letras acentuadas), puedes usar ensure_ascii=False para preservarlos en el JSON.
+        - sort_keys=True:
+            - Ordenar las claves al convertir el objeto a JSON.
+    - Convertir JSON a python (Deserealizacion)
+        - json.loads():
+            - La función loads() convierte una cadena JSON en un objeto Python (como un diccionario o lista).
+        - Manejo de errores durante la deserialización:
+            - Si la cadena no es un JSON válido, se generará una excepción. Usamos un bloque try-except para manejarlo.
+    - Trabajar con archivos JSON
+        - Leer datos desde un archivo JSON (json.load()):
+            - Para leer directamente datos desde un archivo JSON y convertirlos en un objeto Python.
+        - Escribir datos a un archivo JSON (json.dump()):
+            - Para escribir datos Python en un archivo JSON.
+        - Opciones adicionales con dump() y load():
+            - Puedes añadir parámetros como indent, ensure_ascii, y sort_keys al trabajar con archivos JSON para mejorar la legibilidad o el formato.
+    - Trabajar con datos JSON mas complejos
+        - Listas y objetos dentro de JSON:
+            - El formato JSON puede contener listas, objetos y otros tipos de datos complejos. Puedes trabajar con estos en Python de manera similar a cómo lo harías con listas y diccionarios.
+        - Deserializar JSON con tipos de datos complejos:
+            - A veces, puedes necesitar convertir ciertos tipos de datos, como fechas, durante la deserialización. Para hacerlo, puedes usar un parámetro object_hook para personalizar cómo se interpretan las claves del JSON.
+    - Formateo de JSON
+        - Pretty Printing (Impresión bonita):
+            - Usar indent y separators para formatear el JSON de manera más legible.
+        - Eliminar espacios extras:
+            - Controlar la cantidad de espacio y la presentación de los elementos en JSON.
+    - Manejo de fechas en JSON
+        - Serializar y deserializar objetos de fecha:
+            - Los objetos de fecha no pueden ser serializados directamente a JSON. Puedes convertirlos en cadenas durante la serialización y volver a convertirlos durante la deserialización.
+    - Validacion de datos JSON
+        - Comprobación de validez de JSON:
+            - A veces, es necesario verificar si un archivo o cadena de texto es un JSON válido antes de procesarlo. Esto se puede hacer utilizando try-except para detectar errores de decodificación.
+
+Dia 13: Libreria argparse para creacion de interfaces de linea de comandos
+    - Introduccion a argparse
+        - ¿Que es argparse?
+            - argparse es una librería estándar de Python que facilita la creación de programas con interfaces de línea de comandos, permitiendo recibir y procesar argumentos de forma sencilla.
+        - ¿Que es una interfaz de linea de comandos (CLI)
+    - Crear un parser basico
+        - Crear un objeto ArgumentParser:
+            - Para empezar a usar argparse, creas un objeto ArgumentParser.
+        - Parsear los argumentos:
+            - Usamos parser.parse_args() para analizar los argumentos que se pasan al programa.
+    - Definir argumentos de la linea de comandos
+        - Argumentos Posicionales:
+            - Son aquellos que deben ser proporcionados en una posición específica. No tienen un nombre (sólo el valor).
+        - Argumentos Opcionales:
+            - Son aquellos que no son obligatorios y se pasan con un prefijo como -- o -.
+        - Argumentos de tipo booleano:
+            - Se utilizan para activar o desactivar una opción con presencia del argumento.
+        - Definir valores por defecto:
+            - Puedes asignar un valor por defecto si el usuario no proporciona un argumento.
+    - Tipos de datos de los argumentos
+        - Tipo de dato int, float, str
+            - Puedes especificar el tipo de dato de un argumento para asegurarte de que el valor que se pase sea del tipo correcto.
+        - Lista de valores
+            - Puedes permitir que un argumento acepte una lista de valores.
+        - Argumentos con múltiples valores:
+            - Puedes hacer que un argumento reciba varios valores a través de la opción nargs.
+    - Obtener y usar los valores de los argumentos
+        - Acceder a los argumentos
+            - Los valores de los argumentos se almacenan en un objeto Namespace que puedes usar como un objeto normal.
+    - Mensajes de ayuda automaticos
+        - Automatización de la ayuda:
+            - Cuando defines los argumentos con argparse, el módulo genera automáticamente mensajes de ayuda que puedes mostrar con el parámetro -h o --help.
+        - Descripción de la ayuda:
+            - Puedes incluir una descripción general y descripciones específicas para cada argumento.
+    - Argumentos con opciones avanzadas
+        - Argumentos mutualmente excluyentes:
+            - Puedes hacer que algunos argumentos sean mutuamente excluyentes, es decir, que no se puedan usar juntos.
+        - Argumentos de acción personalizada:
+            - Puedes definir acciones personalizadas para los argumentos con el parámetro action.
+    - Subcomandos (subparsers):
+        - Usar subcomandos:
+            - Los subcomandos permiten que tu script tenga diferentes "modos" o funcionalidades, como una herramienta con múltiples comandos. Cada subcomando puede tener sus propios argumentos.
+    - Control de validacion y errores
+        - Validación de argumentos:
+            - Puedes comprobar los valores de los argumentos y realizar validaciones antes de que el programa continúe.
+        - Mensajes de error personalizados:
+            - Si el usuario proporciona argumentos incorrectos, puedes manejar los errores con mensajes específicos.
+    - Archivos de configuracion
+        - Leer argumentos desde un archivo de configuración:
+            - Puedes combinar argparse con archivos de configuración para permitir que los usuarios definan sus preferencias sin necesidad de pasar todos los argumentos desde la línea de comandos.
+
+Dia 14: Introduccion a Flask - Framework web ligero
+    - Introduccion a Flask
+        - ¿Que es Flask?
+        - Instalacion de Flask
+    - Crear una aplicacion flask basica
+        - Estructura de un archivo flask
+        - ¿Que hace este codigo?
+        - Ejecutar la aplicacion
+    - Rutas y metodos HTTP
+        - Definir rutas
+        - Metodos HTTP
+        - Captura de parametros de URL
+    - Renderizar HTML con Flask
+        - Uso de plantillas (templates)
+        - Variables en pantalla
+    - Manejo de Formularios con Flask
+        - Recibir datos de formularios (POST)
+        - Generar formularios HTML
+    - Redireccion y mensajes Flash
+    - Archivos Estaticos
+        - Uso de archivos Estaticos
+        - Acceso a archivos Estaticos
+    - Manejo de errores y excepciones
+        - Errores HTTP comunes
+        - Manejo de excepciones personalizadas
+
+Dia 15: Continuacion a Flask
+    - Conectar Flask con Base de datos
+        - Flask y SQLite
+        - Operaciones CRUD
+        - SQAlchemy
+            - ¿Que es SQAlchemy?
+            - Instalacion
+            - Definir Modelos (Tablas)
+            - Operaciones CRUD con SQLAlchemy
+        - Migraciones de base de datos con Flask-Migrate
+    - Formularios avanzados y validaciones (WTForms)
+        - WTForms
+            - ¿Que es WTForms?
+            - Instalacion
+            - Crear formularios con Flask-WTF
+            - Validaciones de formularios
+    - Autenticacion y autorizacion (Flask-Login)
+        - Flask-Login
+            - Instalacion
+            - Protecciones de rutas
+            - Gestionar roles y permisos
+    - Desarrollar APIs con Flask-RESTful
+        - Flask-RESTful
+            - Instalacion
+            - Crear recursos y endpoints
+            - Manejo de solicitudes y respuestas JSON
+    - Testing y Pruebas unitarias con Flask
+        - Intro a pruebas con flask
+            - Configuracion de pruebas en flask
+            - Pruebas de rutas y vistas
+    - Despliegue de una aplicacion con Flask
+        - ¿Que es el Hosting?
+        - Desplegar en un servidor de produccion
+            - Gunicorn
+    - Mejorando el rendimiento y la seguridad
+        - Optimizacion de rendimiento
+        - Seguridad en Flask
+            - Flask-WTF para CSRF
+            - Autenticacion y autorizacion
+    - Integracion con otras tecnologias y microservicios
+        - Flask con WebSockets (Flask-SocketIO)
+            - Instalacion de Flask-SocketIO
+            - Ejemplo de uso
+
+Dia 16: Framework Django - Fundamentos
+    - Instalacion y estructura de un proyecto Django
+        - Instalacion de Django
+        - Creacion de un proyecto
+        - Creacion de una aplicacion Django
+    - Modelos y Migraciones
+        - Definicion de Modelos
+        - Migraciones
+            - Crear migraciones
+            - Aplicar Migraciones
+    - Creacion de vistas y plantillas
+        - Vistas en Django
+            - Vista en funcion
+            - Vista en Clase
+        - URLs y rutas
+        - Plantillas en Django
+            - Renderizar plantillas
+
+Dia 17: Continuación con Django - Formularios y autenticación
+    - Manejo de formularios en Django
+        - Formularios basicos
+            - Formulario simple
+        - Renderizar formularios en plantillas
+            - Vista
+            - Plantilla
+    - Formularios Modelos
+        - Que es un Modelo
+        - Modelo
+    - Sistema de autenticacion y permisos
+        - Autenticacion de usuarios
+            - Vista de inicio de sesion
+            - Formulario de registro
+                - Vista para registro
+        - Permisos y acceso restringido
+            - Uso de decoradores
+                - login_required
+                - Permisos basados en roles
+            - Permisos en vistas basadas en clases (CBVs)
+                - LoginRequiredMixin
+                - PermissionRequiredMixin
+    - Enrutamiento avanzado
+        - URL con parametros
+        - URL con rutas dinamicas
+        - Rutas con expresiones regulares
+
+Dia 18: Libreria FastAPI para APIs rapidas
+    - Introduccion a FastAPI y ventajas sobre Flask/Django
+        - ¿Que es FastAPI?
+        - Ventajas sobre Flask/Django
+            - Velocidad
+            - Basado en Python 3.12+
+            - Documentacion automatica
+            - Validacion automatica de datos
+            - Asincrono y sincronico
+    - Crear una API RESTful
+        - Instalar FastAPI y Uvicorn
+        - Estructura basica de FastAPI
+            - FastAPI() crea una instancia de la aplicacion
+            - @app.get("/") define una ruta para manejar peticiones GET en la URL raiz.
+        - Ejecutar la aplicacion
+        - Crear rutas para CRUD (Crear, Leer, Actualizar, Eliminar)
+            - POST
+            - GET
+            - PUT
+            - DELETE
+    - Validacion de datos con Pydantic
+        - Modelos Pydantic
+        - Validacion automatica
+
+Dia 19: Librería requests avanzada para consumo de APIs
+    - Peticion avanzadas (headers, autenticacion)
+    - Enviar Headers personalizados
+    - Autenticacion basica con requests
+    - Autenticacion con Token (Bearer Token)
+    - Manejo de excepciones y tiempos de espera
+        - Manejo de excepciones
+        - Configuracion de tiempos de espera
+            - Tiempo de conexion
+            - Tiempo de lectura
+
+Dia 20: Framework TensorFlow para Machine Learning
+    - Introduccion a TensorFlow
+        - ¿Que es TensorFlow?
+        - ¿Que es Machine Learning?
+        - ¿Que es Deep Learning?
+        - ¿Que son Redes Neuronales?
+    - Crear un modelo simple de red Neuronal
+        - Instalacion de TensorFlow
+        - Definir un modelo simple de red Neuronal
+        - Entrenar el modelo
+        - Evaluar el modelo
+    - Entrenamiento y evaluacion de un modelo
+        - Ajustar los hiperparametros
+        - Uso de Callbacks durante el entrenamiento
+            - EarlyStopping
+            - ModelCheckpoint
+        - Optimizacion del modelo
+            - Ajustar hiperparametros como:
+                - El tamaño de la capa oculta
+                - La funcion de activacion
+                - El optimizacion del learning rate
+
+Dia 21: Libreria scikit-learn para machine learning tradicional
+    - Algoritmos de clasificacion y regresion
+        - Algoritmos de clasificacion:
+            - Regresion logistica
+            - Maquinas de soporte vectorial
+            - Arboles de decision
+            - Vecinos mas cercanos
+            - Random Forest
+        - Algoritmos de regresion:
+            - Regresion lineal
+            - Arboles de decision para regresion
+            - Maquinas de soporte vectorial para regresion
+            - Random forest para regresion
+    - Preprocesamiento de datos
+        - Escalado de caracteristicas
+            - StandarScaler
+            - MinMaxScaler
+        - Imputacion de datos faltantes
+        - Codificacion de variables categoricas
+    - Evaluacion de Modelos
+        - Metricas para clasificacion
+            - Precision
+            - Precision y Recall
+            - F1-Score
+            - Matriz de confusion
+        - Metricas para regresion
+            - Error cuadratico medio (MSE)
+            - Raiz del error cuadratico medio (RMSE)
+            - Coeficiente de determinacion (R²)
+
+Dia 22: Libreria Pytorch para Deep learning
+    - Diferencias entre PyTorch y TensorFlow
+        - Modelo de programacion
+        - Facilidad de uso
+        - Soporte para la comunidad y recursos
+        - Uso en produccion
+    - Crear y entrenar redes neuronales en PyTorch
+        - Instalacion de PyTorch
+        - Crear una red neuronal simple
+        - Entrenar el modelo
+    - Uso de DataLoader y torchvision
+        - DataLoader
+        - torchvision
+
+Dia 23: Libreria selenium para Automatización web
+    - Introduccion a la automatización de navegadores
+        - ¿Que es selenium?
+        - Ventajas de selenium 
+            - Permite la interaccion real con la interfaz de usuario
+            - Compatible con varios navegadores
+            - Muy util para pruebas automatizadas y scraping de contenido dinamico
+        - Instalacion de selenium
+            - Descargar el controlador correspondiente para tu navegador
+            - Poner el controlador en el PATH
+    - Navegar y extraer informacion de una pagina web
+        - Abrir un navegador y navegar a una pagina web
+        - Extraer informacion de una pagina
+    - Automatizacion de formularios y clics
+        - Llenar formularios
+        - Hacer clic en botones o enlaces
+        - Esperas en Selenium
+
+Dia 24: Libreria asyncio para programacion asincronica
+    - Conceptos de programacion asincrona y concurrencia
+        - ¿Que es la programacion asincrona?
+        - Concurrencia vs Paralelismo
+        - ¿Por que usar asyncio?
+            - Consultas a bases de datos
+            - Peticiones HTTP
+            - Lectura o escritura en archivo
+            - Interaccion con servicios web
+    - Crear tareas asincronas con asyncio
+        - Crear una funcion asincrona
+    - Uso de async/await para manejo de IO
+        - Hacer multiples tareas asincronas concurrentemente
+        - Usar await para esperar multiples operaciones de IO
+
+Dia 25: Libreria pytest para pruebas automatizadas
+    - Fundamentos de Pruebas Unitarias
+        - ¿Que son las pruebas unitarias?
+            - Ventajas de las pruebas unitarias:
+                - Detectan errores en las primeras etapas del desarrollo
+                - Permiten refactorizar el codigo de forma segura
+                - Facilitan la compresion del comportamiento de las funciones
+        - Estructura de una prueba unitaria basica
+            - Preparar el entorno (configurar los datos)
+            - Ejecutar el codigo que estamos probando (llamar a la funcion)
+            - Verificar que el resultado sea el esperado (comparar el resultado real con el esperado)
+    - Crear pruebas con pytest
+        - Instalacion de pytest
+        - Crear una prueba basica con pytest
+        - Ejecutar las pruebas
+    - Manejo de Fixtures y Pruebas Avanzadas
+        - ¿Que son las Fixtures?
+        - Crear una fixture simple
+        - Ejecutar pruebas con fixtures
+        - Pruebas avanzadas
+            - Pruebas parametrizadas
+            - Pruebas con excepciones
+        
+
